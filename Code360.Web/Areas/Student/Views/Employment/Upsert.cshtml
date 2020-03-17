@@ -1,0 +1,46 @@
+﻿@model  EmploymentViewModel
+<div class="panel-body">
+    <form asp-controller="" asp-action="Upsert" method="post">
+        <input asp-for="StudentId" type="hidden" />
+        <div class="row card card-body">
+            <div class="col-md-6">
+                <label style="margin: 0 0 0 0" asp-for="CompanyName"></label>
+                <input class="form-control" type="text" placeholder="Enter Your Company Name." asp-for="CompanyName" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label style="margin: 10px 0 0 0" asp-for="StartDate"></label>
+                <input class="form-control" type="date" asp-for="StartDate" />
+            </div>
+
+            <div class="col-md-6">
+                <label style="margin: 10px 0 0 0" asp-for="Salary"></label>
+                <input class="form-control" type="text" placeholder="Enter Your Salary." asp-for="Salary" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+                                              
+
+            <div class="col-md-6">
+                <label style="margin: 10px 0 0 0" asp-for="Address"></label>
+                <input class="form-control" type="text" placeholder="Please enter a valid address" asp-for="Address" />
+            </div>
+
+            
+            <div class="col-md-6">
+                <label style="margin: 10px 0 0 0" asp-for="ContactPerson"></label>
+                <input class="form-control" type="tel" placeholder="Enter your Name of Contact Person" asp-for="ContactPerson" />
+                <span asp-validation-for="ContactPerson" class="text-danger"></span>
+            </div>
+        </div>
+
+               
+
+        <div class="row ">
+            <div class="col-md-3">
+                @*<input class="btn btn-success" type="submit" value="upsert" style="margin: 10px 0 0 0; width: 120px" />*@
+                <button class="btn btn-success" type="submit" style="margin: 10px 0 0 0; width: 120px">@(Model.Id != null ? "Update" : "Create")</button>
+            </div>
+        </div>
+    </form>
+</div>
